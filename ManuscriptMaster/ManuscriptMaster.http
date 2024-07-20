@@ -1,0 +1,6 @@
+@ManuscriptMaster_HostAddress = http://localhost:5093
+
+GET {{ManuscriptMaster_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
