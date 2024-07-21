@@ -12,5 +12,6 @@ namespace ManuscriptMaster.Domain.Entities
 		public int BookId { get; set; }
 		public BookEntity? Book { get; set; }
 		public string Name { get; set; } = string.Empty;
+		public string Path { get; set; } = string.Empty;
 	}
 }
