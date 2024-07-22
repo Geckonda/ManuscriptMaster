@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ManuscriptMaster.Domain.Entities;
+using ManuscriptMaster.DAL.Configurations;
 
 namespace ManuscriptMaster.DAL
 {
@@ -30,7 +31,17 @@ namespace ManuscriptMaster.DAL
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-
+			modelBuilder.ApplyConfiguration(new AccessModificatorsConfiguration());
+			modelBuilder.ApplyConfiguration(new BookPicturesConfiguration());
+			modelBuilder.ApplyConfiguration(new BooksConfiguration());
+			modelBuilder.ApplyConfiguration(new BookStatusesConfiguration());
+			modelBuilder.ApplyConfiguration(new CharacteresConfiguration());
+			modelBuilder.ApplyConfiguration(new CharacterPicturesConfiguration());
+			modelBuilder.ApplyConfiguration(new GenresConfiguration());
+			modelBuilder.ApplyConfiguration(new RatingsConfiguration());
+			modelBuilder.ApplyConfiguration(new RolesConfiguration());
+			modelBuilder.ApplyConfiguration(new UsersConfiguration());
+			modelBuilder.ApplyConfiguration(new WorldviewsConfiguration());
 		}
 	}
 }

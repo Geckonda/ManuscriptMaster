@@ -1,3 +1,5 @@
+using ManuscriptMaster.DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManuscriptMaster
 {
@@ -12,7 +14,12 @@ namespace ManuscriptMaster
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
-			builder.Services.AddSwaggerGen();
+			builder.Services.AddSwaggerGen(); 
+			builder.Services.AddDbContext<ManuscriptMasterDBContext>(
+				options =>
+				{
+					options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConntection"));
+				});
 
 			var app = builder.Build();
 
