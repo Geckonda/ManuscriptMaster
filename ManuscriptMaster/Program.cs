@@ -9,10 +9,8 @@ namespace ManuscriptMaster
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
 
 			builder.Services.AddControllers();
-			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen(); 
 			builder.Services.AddDbContext<ManuscriptMasterDBContext>(
@@ -20,6 +18,9 @@ namespace ManuscriptMaster
 				{
 					options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConntection"));
 				});
+
+			builder.Services.InitialiseRepositories();
+			builder.Services.InitialiseServices();
 
 			var app = builder.Build();
 
