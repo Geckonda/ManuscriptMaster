@@ -22,7 +22,7 @@ namespace ManuscriptMaster.DAL
         public DbSet<BookStatusEntity> BookStatuses => Set<BookStatusEntity>();
         public DbSet<CharacterEntity> Characters => Set<CharacterEntity>();
         public DbSet<CharacterPictureEntity> CharacterPictures => Set<CharacterPictureEntity>();
-        public DbSet<EventEntity> Events => Set<EventEntity>();
+        //public DbSet<EventEntity> Events => Set<EventEntity>();
         public DbSet<GenreEntity> Genres => Set<GenreEntity>();
         public DbSet<RatingEntity> Rating => Set<RatingEntity>();
         public DbSet<RoleEntity> Role => Set<RoleEntity>();
