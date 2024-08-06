@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ManuscriptMaster.DAL\ManuscriptMaster.DAL.csproj" />
+    <ProjectReference Include="..\ManuscriptMaster.Service\ManuscriptMaster.Service.csproj" />
   </ItemGroup>
 
 </Project>

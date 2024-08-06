@@ -1,5 +1,6 @@
 using ManuscriptMaster.DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ManuscriptMaster
 {
@@ -19,6 +20,7 @@ namespace ManuscriptMaster
 					options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConntection"));
 				});
 
+			builder.Services.ConfigureServices();
 			builder.Services.InitialiseRepositories();
 			builder.Services.InitialiseServices();
 
