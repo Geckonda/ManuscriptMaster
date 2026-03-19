@@ -2,6 +2,8 @@ package com.MM.ManuscriptMaster.domain.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,6 +39,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference("author-books")
     private User author;
 
     @Enumerated(EnumType.STRING)
@@ -50,8 +53,10 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "genre_id")
+    @JsonBackReference("genre-books")
     private Genre genre;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("book-episodes")
     private List<Episode> episodes;
 }

@@ -2,6 +2,7 @@ package com.MM.ManuscriptMaster.domain.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,5 +36,6 @@ public class Genre {
     private String description;
 
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("genre-books")
     private List<Book> books;
 }

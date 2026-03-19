@@ -1,5 +1,6 @@
 package com.MM.ManuscriptMaster.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -51,5 +52,6 @@ public class Character {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference("author-characters")
     private User author;
 }

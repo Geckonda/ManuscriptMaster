@@ -1,5 +1,6 @@
 package com.MM.ManuscriptMaster.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,5 +38,6 @@ public class Episode {
 
     @ManyToOne
     @JoinColumn(name = "book_id")
+    @JsonBackReference("book-episodes")
     private Book book;
 }
